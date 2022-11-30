@@ -9,10 +9,7 @@ import mongoose from "mongoose";
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
 mongoose.connect(CONNECTION_STRING);
 const app = express()
-app.use(cors({
-    credentials: true,
-    origin: true
-}))
+app.use(cors)
 app.use(express.json());
 TuitsController(app);
 HelloController(app)
